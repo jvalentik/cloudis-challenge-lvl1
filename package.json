@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "rm -rf dist && nx run-many --target=build --parallel"
+    "build": "rm -rf dist && nx run-many --target=build --parallel",
+    "postinstall": "nx run-many --target=generate-types --parallel"
   },
   "private": true,
   "devDependencies": {
