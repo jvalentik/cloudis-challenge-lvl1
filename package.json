@@ -2,7 +2,9 @@
   "name": "@cloudis/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "rm -rf dist && nx run-many --target=build --parallel"
+  },
   "private": true,
   "devDependencies": {
     "@angular-devkit/build-angular": "~16.0.0",
