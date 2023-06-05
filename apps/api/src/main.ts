@@ -1,15 +1,15 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
+import { AppModule } from './app/app.module';
 import { Logger } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-
-import { AppModule } from './app/app.module';
+import { registerPrismaShutdown as registerPrismaStoreShutdown } from '@cloudis/prisma-client-store';
+import { registerPrismaShutdown as registerPrismaUsersShutdown } from '@cloudis/prisma-client-users';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  await registerPrismaUsersShutdown(app);
+  await registerPrismaStoreShutdown(app);
+
   const globalPrefix = 'api';
   app.setGlobalPrefix(globalPrefix);
   const port = process.env.PORT || 3000;

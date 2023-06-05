@@ -10,11 +10,36 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@cloudis/data-access-inventory": [
+        "libs/data-access-inventory/src/index.ts"
+      ],
+      "@cloudis/data-access-posts": [
+        "libs/data-access-posts/src/index.ts"
+      ],
+      "@cloudis/data-access-stores": [
+        "libs/data-access-stores/src/index.ts"
+      ],
+      "@cloudis/data-access-users": [
+        "libs/data-access-users/src/index.ts"
+      ],
+      "@cloudis/prisma-client-store": [
+        "libs/prisma-client-store/src/index.ts"
+      ],
+      "@cloudis/prisma-client-users": [
+        "libs/prisma-client-users/src/index.ts"
+      ]
+    }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

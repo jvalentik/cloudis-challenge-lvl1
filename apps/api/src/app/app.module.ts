@@ -1,11 +1,18 @@
+import { AppController } from './app.controller';
+import { DataAccessInventoryModule } from '@cloudis/data-access-inventory';
+import { DataAccessPostsModule } from '@cloudis/data-access-posts';
+import { DataAccessStoresModule } from '@cloudis/data-access-stores';
+import { DataAccessUsersModule } from '@cloudis/data-access-users';
 import { Module } from '@nestjs/common';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-
 @Module({
-  imports: [],
+  imports: [
+    DataAccessUsersModule,
+    DataAccessPostsModule,
+    DataAccessStoresModule,
+    DataAccessInventoryModule,
+  ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}
